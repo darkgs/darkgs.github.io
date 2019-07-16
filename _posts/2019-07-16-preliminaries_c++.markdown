@@ -61,7 +61,8 @@ if (iter != m.end()) {
 	m.erase(iter);
 }
 
-m.size(3);	// the number of entires with key, 0 or 1
+m.size();	// the size of container
+m.count(3);	// the number of entires with key, 0 or 1
 m.empty();	// is empty?
 m.clear();	// reset
 {% endhighlight %}
