@@ -9,7 +9,7 @@ exclude:
   - "/vendor/"
 
 # Site settings
-title: Bonhun's blog
+title: Bonhun's Blog
 subtitle: "Simple is the Best"
 email: darkgs@snu.ac.kr
 name: Bonhun koo
