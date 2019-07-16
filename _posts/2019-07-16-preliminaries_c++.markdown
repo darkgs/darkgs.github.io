@@ -22,7 +22,13 @@ float f_max = std::numeric_limits<float>::max();
 
 ## Key-value containers
 ### Generate std::pair
-a
+{% highlight cpp %}
+std::pair <int, std::string> p;
+p = std::make_pair(10, "aa");
+std::pair <int, std::string> p2 (20, "bb");
+
+std::cout << p.first << ":" << p.second << endl;
+{% endhighlight %}
 ### std::map
 b
 ### std::unordered_map
