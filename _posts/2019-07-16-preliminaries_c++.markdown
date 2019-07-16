@@ -31,7 +31,7 @@ std::cout << p.first << ":" << p.second << endl;
 {% endhighlight %}
 
 ### std::map
-It stores key-value pair of entires to the balancing BST.
+It stores key-value pair of entires to the <b>balancing BST</b>.
 So it inserts, deletes, and searches an entry within the time complexity of O(log(n)) + rebalance.
 You can find the detailed api of std::map [here][map_api].
 It keeps the <b>uniqueness</b> of keys by ignoring additional insertions with duplicated keys.
@@ -66,6 +66,11 @@ m.clear();	// reset
 {% endhighlight %}
 
 ### std::unordered_map
-c
+It stores key-value pair of entires to the <b>hash table</b>.
+So it inserts, deletes, and searches an entry within the time complexity of O(1) in the average and O(n) in the worst case.
+You can find the detailed api of std::map [here][unordered_map_api].
+It keeps the <b>uniqueness</b> of keys by ignoring additional insertions with duplicated keys.
+The usage of std::unordered_map is similar to std::map.
 
 [map_api]: http://www.cplusplus.com/reference/map/map/
+[unordered_map_api]: http://www.cplusplus.com/reference/unordered_map/unordered_map/
