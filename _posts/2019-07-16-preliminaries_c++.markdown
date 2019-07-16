@@ -36,6 +36,33 @@ So it inserts, deletes, and searches an entry within the time complexity of O(lo
 You can find the detailed api of std::map [here][map_api].
 It keeps the <b>uniqueness</b> of keys by ignoring additional insertions with duplicated keys.
 {% highlight cpp %}
+#include <map>
+
+using namespace std;
+
+map<int, int> m;
+
+m.insert(pair<int, int>(1, 40));
+m.insert(pair<int, int>(2, 30));
+m.insert(pair<int, int>(3, 30));
+m.insert(pair<int, int>(3, 40));	// ignored
+
+map<int,int>::iterator iter;
+
+for (iter = m.begin(); iter != m.end(); ++iter) {
+	cout << "key : " << iter->first \
+		<< "value : " << iter->second << endl;
+}
+
+m.erase(2);
+iter = m.find(3);
+if (iter != m.end()) {
+	m.erase(iter);
+}
+
+m.size(3);	// the number of entires with key, 0 or 1
+m.empty();	// is empty?
+m.clear();	// reset
 {% endhighlight %}
 
 ### std::unordered_map
