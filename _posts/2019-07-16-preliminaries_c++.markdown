@@ -12,13 +12,10 @@ cover:  "/assets/instacode.png"
 
 For instance, this template...
 {% highlight html %}
-{% raw %}{% highlight javascript %}    
-function demo(string, times) {    
-  for (var i = 0; i < times; i++) {    
-    console.log(string);    
-  }    
-}    
-demo("hello, world!", 10);
+{% raw %}{% highlight c++ %}    
+int main() {
+	return 0;
+}
 {% endhighlight %}{% endraw %}
 {% endhighlight %}
 
