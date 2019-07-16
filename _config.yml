@@ -75,7 +75,7 @@ social:
     username: darkgs
     url: https://twitter.com/darkgs
     desc: Follow me on Twitter
-    share: true
+    share: false
 
   - name: Facebook
     icon: facebook
