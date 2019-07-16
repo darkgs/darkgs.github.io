@@ -77,13 +77,6 @@ social:
     desc: Connect with me on LinkedIn
     share: true
 
-  - name: Twitter
-    icon: twitter
-    username: darkgs
-    url: https://twitter.com/darkgs
-    desc: Follow me on Twitter
-    share: false
-
   - name: Facebook
     icon: facebook
     username: thebencentra
