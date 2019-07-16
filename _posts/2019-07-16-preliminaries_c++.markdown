@@ -8,14 +8,16 @@ tags:	coding interview
 cover:  "/assets/instacode.png"
 ---
 
-### Code Snippets
+### Numeric limits of variables
 
-For instance, this template...
+{% highlight cpp %}
+#include <limits>
 
-{% highlight c++ %}
-int main() {
-	return 0;
-}
+int i_min = std::numeric_limits<int>::min();
+int i_max = std::numeric_limits<int>::max();
+
+float f_min = std::numeric_limits<float>::min();
+float f_max = std::numeric_limits<float>::max();
 {% endhighlight %}
 
 [liquid]: https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
