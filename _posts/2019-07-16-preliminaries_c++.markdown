@@ -22,6 +22,7 @@ float f_max = std::numeric_limits<float>::max();
 
 ## Key-value containers
 ### Generate std::pair
+std::pair is entry of key-value containers api in the standard library of c++.
 {% highlight cpp %}
 std::pair <int, std::string> p;
 p = std::make_pair(10, "aa");
