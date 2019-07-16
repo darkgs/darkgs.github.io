@@ -72,10 +72,10 @@ descriptions:
 social:
   - name: Twitter
     icon: twitter
-    username: TheBenCentra
-    url: https://twitter.com/TheBenCentra
+    username: darkgs
+    url: https://twitter.com/darkgs
     desc: Follow me on Twitter
-    share: false
+    share: true
 
   - name: Facebook
     icon: facebook
