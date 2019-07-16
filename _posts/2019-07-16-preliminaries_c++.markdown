@@ -11,23 +11,11 @@ cover:  "/assets/instacode.png"
 ### Code Snippets
 
 For instance, this template...
-{% highlight html %}
-{% raw %}{% highlight c++ %}    
+
+{% highlight c++ %}
 int main() {
 	return 0;
 }
-{% endhighlight %}{% endraw %}
-{% endhighlight %}
-
-...will come out looking like this:
-
-{% highlight javascript %}
-function demo(string, times) {
-  for (var i = 0; i < times; i++) {
-    console.log(string);
-  }
-}
-demo("hello, world!", 10);
 {% endhighlight %}
 
 [liquid]: https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
