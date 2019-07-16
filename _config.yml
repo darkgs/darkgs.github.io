@@ -70,6 +70,13 @@ descriptions:
 #     desc: Follow me on Twitter            # Description to display as link title, etc
 #     share: true                           # Include in the "Share" section of posts
 social:
+  - name: LinkedIn
+    icon: linkedin
+    username: Bonhun koo
+    url: https://www.linkedin.com/in/bonhun-koo-0b213716b/
+    desc: Connect with me on LinkedIn
+    share: true
+
   - name: Twitter
     icon: twitter
     username: darkgs
@@ -90,13 +97,6 @@ social:
     url: https://github.com/darkgs
     desc: Fork me on GitHub
     share: false
-
-  - name: LinkedIn
-    icon: linkedin
-    username: Bonhun koo
-    url: https://www.linkedin.com/in/bonhun-koo-0b213716b/
-    desc: Connect with me on LinkedIn
-    share: true
 
   - name: Google+
     icon: google-plus
