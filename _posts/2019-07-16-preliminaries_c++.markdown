@@ -23,9 +23,9 @@ float f_max = std::numeric_limits<float>::max();
 
 ## Sequence Containers
 ### std::vector
-It manages dynamically allocated array to store elements.
+It manages <b>dynamically allocated array</b> to store elements.
 Thus, pushing or popping (push_back, pop_back) the lasting element can be done in O(1).
-However, inserting or erasing an element at specific position take O(n) because it should move all following elements.
+However, inserting or erasing an element at specific position take O(n) because it should move all of the following elements.
 {% highlight c++ %}
 #include <vector>
 
@@ -34,9 +34,9 @@ using namespace std;
 int main() {
 	int data[] = {0, 1, 2, 4, 5};
 	vector<int> v(data, data + sizeof(data)/sizeof(data[0]));       // initialize from array
-	vector<int> v2(5, 10);                                          // 10 10 10 10 10
-	vector<int> v3(v2);												// copy v2
-	vector<int> v4(v.begin(), v.begin()+2);							// subset of v, 0 1
+	vector<int> v2(5, 10);	// 10 10 10 10 10
+	vector<int> v3(v2);		// copy v2
+	vector<int> v4(v.begin(), v.begin()+2);		// subset of v, 0 1
 
 	// Sequential access - Efficient
 	vector<int>::iterator iter;
@@ -53,12 +53,12 @@ int main() {
     cout << endl;
 
     // insert / erase - O(n)
-    v.insert(v.begin()+3, 3);				// 0 1 2 3 4 5
-    v.erase(v.begin()+3, v.begin()+4);      // 0 1 2 4 5
+    v.insert(v.begin()+3, 3);		// 0 1 2 3 4 5
+    v.erase(v.begin()+3, v.begin()+4);		// 0 1 2 4 5
 
 	// push_back / pop_back - O(1)
-    v.pop_back();           // 5
-    v.push_back(5);         // 0 1 2 4 5
+    v.pop_back();		// 5
+    v.push_back(5);		// 0 1 2 4 5
 
     return 0;
 }
