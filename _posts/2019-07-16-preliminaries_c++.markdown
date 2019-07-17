@@ -8,7 +8,8 @@ tags:	coding
 cover:  "/assets/instacode.png"
 ---
 
-## Numeric limits of variables
+## Numeric Limits of Variables
+The maximum/minimum values of variables often are used to initialized in problems asking to find optimal (maximum/minimum) values of solution.
 
 {% highlight cpp %}
 #include <limits>
@@ -20,8 +21,51 @@ float f_min = std::numeric_limits<float>::min();
 float f_max = std::numeric_limits<float>::max();
 {% endhighlight %}
 
-## Key-value containers
-### Generate std::pair
+## Sequence Containers
+### std::vector
+It manages dynamically allocated array to store elements.
+Thus, pushing or popping (push_back, pop_back) the lasting element can be done in O(1).
+However, inserting or erasing an element at specific position take O(n) because it should move all following elements.
+{% highlight c++ %}
+#include <vector>
+
+using namespace std;
+
+int main() {
+	int data[] = {0, 1, 2, 4, 5};
+	vector<int> v(data, data + sizeof(data)/sizeof(data[0]));       // initialize from array
+	vector<int> v2(5, 10);                                          // 10 10 10 10 10
+	vector<int> v3(v2);												// copy v2
+	vector<int> v4(v.begin(), v.begin()+2);							// subset of v, 0 1
+
+	// Sequential access - Efficient
+	vector<int>::iterator iter;
+
+	for (iter = v.begin(); iter != v.end(); ++iter) {
+		cout << *iter << " ";
+    }
+    cout << endl;
+
+    // Random access - Efficient
+    for (int i=0; i<v.size(); ++i) {
+    	cout << v[i] << " ";
+    }
+    cout << endl;
+
+    // insert / erase - O(n)
+    v.insert(v.begin()+3, 3);				// 0 1 2 3 4 5
+    v.erase(v.begin()+3, v.begin()+4);      // 0 1 2 4 5
+
+	// push_back / pop_back - O(1)
+    v.pop_back();           // 5
+    v.push_back(5);         // 0 1 2 4 5
+
+    return 0;
+}
+{% endhighlight %}
+
+## Associative Containers (Key-Value paired)
+### std::pair
 std::pair is entry of key-value containers api in the standard library of c++.
 {% highlight cpp %}
 std::pair <int, std::string> p;
