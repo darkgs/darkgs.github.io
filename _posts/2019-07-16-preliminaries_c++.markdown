@@ -32,7 +32,7 @@ However, inserting or erasing an element at specific position take O(n) because 
 using namespace std;
 
 int main() {
-    int data[] = {0, 1, 2, 4, 5};
+	int data[] = {0, 1, 2, 4, 5};
 	vector<int> v(data, data + sizeof(data)/sizeof(data[0]));       // initialize from array
 	vector<int> v2(5, 10);	// 10 10 10 10 10
 	vector<int> v3(v2);		// copy v2
@@ -156,9 +156,9 @@ The usage of std::unordered_map is similar to std::map.
 using namespace std;
 
 int main() {
-	unordered_map<int, int> m;
+    unordered_map<int, int> m;
 
-	unordered_map<int,int>::iterator iter;		// forward iterator
+    unordered_map<int,int>::iterator iter;		// forward iterator
 
 	return 0;
 }
