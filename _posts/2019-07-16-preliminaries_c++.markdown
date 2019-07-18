@@ -32,7 +32,7 @@ However, inserting or erasing an element at specific position take O(n) because 
 using namespace std;
 
 int main() {
-	int data[] = {0, 1, 2, 4, 5};
+    int data[] = {0, 1, 2, 4, 5};
 	vector<int> v(data, data + sizeof(data)/sizeof(data[0]));       // initialize from array
 	vector<int> v2(5, 10);	// 10 10 10 10 10
 	vector<int> v3(v2);		// copy v2
@@ -41,14 +41,14 @@ int main() {
 	// Sequential access - Efficient
 	vector<int>::iterator iter;		// random access iterator
 
-	for (iter = v.begin(); iter != v.end(); ++iter) {
-		cout << *iter << " ";
+    for (iter = v.begin(); iter != v.end(); ++iter) {
+        cout << *iter << " ";
     }
     cout << endl;
 
     // Random access - Efficient
     for (int i=0; i<v.size(); ++i) {
-    	cout << v[i] << " ";
+        cout << v[i] << " ";
     }
     cout << endl;
 
@@ -56,9 +56,9 @@ int main() {
     v.insert(v.begin()+3, 3);		// 0 1 2 3 4 5
     v.erase(v.begin()+3, v.begin()+4);		// 0 1 2 4 5
 
-	// push_back / pop_back - O(1)
-	cout << v.back() << endl;	// 5
-	v.pop_back();		// 0 1 2 4
+    // push_back / pop_back - O(1)
+    cout << v.back() << endl;	// 5
+    v.pop_back();		// 0 1 2 4
     v.push_back(5);		// 0 1 2 4 5
 
     return 0;
@@ -81,13 +81,13 @@ int main() {
 
 	// push_back / pop_back - O(1)
 	cout << d.back() << endl;	// 4
-    d.pop_back();		// 2 3
-    d.push_back(4);		// 2 3 4
+	d.pop_back();		// 2 3
+	d.push_back(4);		// 2 3 4
 
 	// push_front / pop_front - O(1)
 	cout << d.front() << endl;	// 2
-    d.pop_front();		// 3 4
-    d.push_front(2);		// 2 3 4
+	d.pop_front();		// 3 4
+	d.push_front(2);		// 2 3 4
 
 	return 0;
 }
