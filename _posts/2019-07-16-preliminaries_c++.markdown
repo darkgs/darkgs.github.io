@@ -58,7 +58,7 @@ int main() {
 
 	// push_back / pop_back - O(1)
 	cout << v.back() << endl;	// 5
-    v.pop_back();		// 0 1 2 4
+	v.pop_back();		// 0 1 2 4
     v.push_back(5);		// 0 1 2 4 5
 
     return 0;
