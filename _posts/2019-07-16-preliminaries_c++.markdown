@@ -39,7 +39,7 @@ int main() {
 	vector<int> v4(v.begin(), v.begin()+2);		// subset of v, 0 1
 
 	// Sequential access - Efficient
-	vector<int>::iterator iter;
+	vector<int>::iterator iter;		// random access iterator
 
 	for (iter = v.begin(); iter != v.end(); ++iter) {
 		cout << *iter << " ";
@@ -76,6 +76,9 @@ int main() {
 	int data[] = {2, 3, 4};
 	deque<int> d(data, data + sizeof(data)/sizeof(data[1]));
 
+	// Sequential access - Efficient
+	deque<int>::iterator iter;		// random access iterator
+
 	// push_back / pop_back - O(1)
 	cout << d.back() << endl;	// 4
     d.pop_back();		// 2 3
@@ -111,30 +114,34 @@ It keeps the <b>uniqueness</b> of keys by ignoring additional insertions with du
 
 using namespace std;
 
-map<int, int> m;
+int main() {
+	map<int, int> m;
 
-m.insert(pair<int, int>(1, 40));
-m.insert(pair<int, int>(2, 30));
-m.insert(pair<int, int>(3, 30));
-m.insert(pair<int, int>(3, 40));	// ignored
+	m.insert(pair<int, int>(1, 40));	// O(log(n) + rebalance)
+	m.insert(pair<int, int>(2, 30));
+	m.insert(pair<int, int>(3, 30));
+	m.insert(pair<int, int>(3, 40));	// ignored
 
-map<int,int>::iterator iter;
+	map<int,int>::iterator iter;		// bidirectional iterator
 
-for (iter = m.begin(); iter != m.end(); ++iter) {
-	cout << "key : " << iter->first \
-		<< "value : " << iter->second << endl;
+	for (iter = m.begin(); iter != m.end(); ++iter) {
+		cout << "key : " << iter->first \
+			<< "value : " << iter->second << endl;
+	}
+
+	m.erase(2);		// O(log(n) + rebalance)
+	iter = m.find(3);		// O(log(n))
+	if (iter != m.end()) {
+		m.erase(iter);
+	}
+
+	m.size();	// the size of container
+	m.count(3);	// the number of entires with key, 0 or 1
+	m.empty();	// is empty?
+	m.clear();	// reset
+
+	return 0;
 }
-
-m.erase(2);
-iter = m.find(3);
-if (iter != m.end()) {
-	m.erase(iter);
-}
-
-m.size();	// the size of container
-m.count(3);	// the number of entires with key, 0 or 1
-m.empty();	// is empty?
-m.clear();	// reset
 {% endhighlight %}
 
 ### std::unordered_map
@@ -143,6 +150,19 @@ So it inserts, deletes, and searches an entry within the time complexity of O(1)
 You can find the detailed api of std::map [here][unordered_map_api].
 It keeps the <b>uniqueness</b> of keys by ignoring additional insertions with duplicated keys.
 The usage of std::unordered_map is similar to std::map.
+{% highlight cpp %}
+#include <unordered_map>
+
+using namespace std;
+
+int main() {
+	unordered_map<int, int> m;
+
+	unordered_map<int,int>::iterator iter;		// forward iterator
+
+	return 0;
+}
+{% endhighlight %}
 
 [map_api]: http://www.cplusplus.com/reference/map/map/
 [unordered_map_api]: http://www.cplusplus.com/reference/unordered_map/unordered_map/
