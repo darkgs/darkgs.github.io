@@ -4,7 +4,7 @@ title:  "Preliminaries of C++ for coding interview"
 date:   2019-07-16 20:41:00
 author: Bonhun Koo
 categories: [Coding Interview]
-tags:	coding
+tags:    coding
 cover:  "/assets/instacode.png"
 ---
 
@@ -32,14 +32,14 @@ However, inserting or erasing an element at specific position take O(n) because 
 using namespace std;
 
 int main() {
-	int data[] = {0, 1, 2, 4, 5};
-	vector<int> v(data, data + sizeof(data)/sizeof(data[0]));       // initialize from array
-	vector<int> v2(5, 10);	// 10 10 10 10 10
-	vector<int> v3(v2);		// copy v2
-	vector<int> v4(v.begin(), v.begin()+2);		// subset of v, 0 1
+    int data[] = {0, 1, 2, 4, 5};
+    vector<int> v(data, data + sizeof(data)/sizeof(data[0]));       // initialize from array
+    vector<int> v2(5, 10);    // 10 10 10 10 10
+    vector<int> v3(v2);        // copy v2
+    vector<int> v4(v.begin(), v.begin()+2);        // subset of v, 0 1
 
-	// Sequential access - Efficient
-	vector<int>::iterator iter;		// random access iterator
+    // Sequential access - Efficient
+    vector<int>::iterator iter;        // random access iterator
 
     for (iter = v.begin(); iter != v.end(); ++iter) {
         cout << *iter << " ";
@@ -53,13 +53,13 @@ int main() {
     cout << endl;
 
     // insert / erase - O(n)
-    v.insert(v.begin()+3, 3);		// 0 1 2 3 4 5
-    v.erase(v.begin()+3, v.begin()+4);		// 0 1 2 4 5
+    v.insert(v.begin()+3, 3);        // 0 1 2 3 4 5
+    v.erase(v.begin()+3, v.begin()+4);        // 0 1 2 4 5
 
     // push_back / pop_back - O(1)
-    cout << v.back() << endl;	// 5
-    v.pop_back();		// 0 1 2 4
-    v.push_back(5);		// 0 1 2 4 5
+    cout << v.back() << endl;    // 5
+    v.pop_back();        // 0 1 2 4
+    v.push_back(5);        // 0 1 2 4 5
 
     return 0;
 }
@@ -73,23 +73,23 @@ Compared with std:vector, it can push or pop an elements on both ends efficientl
 
 using namespace std;
 int main() {
-	int data[] = {2, 3, 4};
-	deque<int> d(data, data + sizeof(data)/sizeof(data[1]));
+    int data[] = {2, 3, 4};
+    deque<int> d(data, data + sizeof(data)/sizeof(data[1]));
 
-	// Sequential access - Efficient
-	deque<int>::iterator iter;		// random access iterator
+    // Sequential access - Efficient
+    deque<int>::iterator iter;        // random access iterator
 
-	// push_back / pop_back - O(1)
-	cout << d.back() << endl;	// 4
-	d.pop_back();		// 2 3
-	d.push_back(4);		// 2 3 4
+    // push_back / pop_back - O(1)
+    cout << d.back() << endl;    // 4
+    d.pop_back();        // 2 3
+    d.push_back(4);        // 2 3 4
 
-	// push_front / pop_front - O(1)
-	cout << d.front() << endl;	// 2
-	d.pop_front();		// 3 4
-	d.push_front(2);		// 2 3 4
+    // push_front / pop_front - O(1)
+    cout << d.front() << endl;    // 2
+    d.pop_front();        // 3 4
+    d.push_front(2);        // 2 3 4
 
-	return 0;
+    return 0;
 }
 {% endhighlight %}
 
@@ -115,32 +115,32 @@ It keeps the <b>uniqueness</b> of keys by ignoring additional insertions with du
 using namespace std;
 
 int main() {
-	map<int, int> m;
+    map<int, int> m;
 
-	m.insert(pair<int, int>(1, 40));	// O(log(n) + rebalance)
-	m.insert(pair<int, int>(2, 30));
-	m.insert(pair<int, int>(3, 30));
-	m.insert(pair<int, int>(3, 40));	// ignored
+    m.insert(pair<int, int>(1, 40));    // O(log(n) + rebalance)
+    m.insert(pair<int, int>(2, 30));
+    m.insert(pair<int, int>(3, 30));
+    m.insert(pair<int, int>(3, 40));    // ignored
 
-	map<int,int>::iterator iter;		// bidirectional iterator
+    map<int,int>::iterator iter;        // bidirectional iterator
 
-	for (iter = m.begin(); iter != m.end(); ++iter) {
-		cout << "key : " << iter->first \
-			<< "value : " << iter->second << endl;
-	}
+    for (iter = m.begin(); iter != m.end(); ++iter) {
+        cout << "key : " << iter->first \
+            << "value : " << iter->second << endl;
+    }
 
-	m.erase(2);		// O(log(n) + rebalance)
-	iter = m.find(3);		// O(log(n))
-	if (iter != m.end()) {
-		m.erase(iter);
-	}
+    m.erase(2);        // O(log(n) + rebalance)
+    iter = m.find(3);        // O(log(n))
+    if (iter != m.end()) {
+        m.erase(iter);
+    }
 
-	m.size();	// the size of container
-	m.count(3);	// the number of entires with key, 0 or 1
-	m.empty();	// is empty?
-	m.clear();	// reset
+    m.size();    // the size of container
+    m.count(3);    // the number of entires with key, 0 or 1
+    m.empty();    // is empty?
+    m.clear();    // reset
 
-	return 0;
+    return 0;
 }
 {% endhighlight %}
 
@@ -158,9 +158,9 @@ using namespace std;
 int main() {
     unordered_map<int, int> m;
 
-    unordered_map<int,int>::iterator iter;		// forward iterator
+    unordered_map<int,int>::iterator iter;        // forward iterator
 
-	return 0;
+    return 0;
 }
 {% endhighlight %}
 
