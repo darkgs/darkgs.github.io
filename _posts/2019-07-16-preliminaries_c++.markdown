@@ -57,10 +57,36 @@ int main() {
     v.erase(v.begin()+3, v.begin()+4);		// 0 1 2 4 5
 
 	// push_back / pop_back - O(1)
-    v.pop_back();		// 5
+	cout << v.back() << endl;	// 5
+    v.pop_back();		// 0 1 2 4
     v.push_back(5);		// 0 1 2 4 5
 
     return 0;
+}
+{% endhighlight %}
+
+### std::deque
+It manages <b>dynamically allocated array</b> as <b>d</b>ouble-<b>e</b>nded <b>que</b>ue.
+Compared with std:vector, it can push or pop an elements on both ends efficiently.
+{% highlight c++ %}
+#include <deque>
+
+using namespace std;
+int main() {
+	int data[] = {2, 3, 4};
+	deque<int> d(data, data + sizeof(data)/sizeof(data[1]));
+
+	// push_back / pop_back - O(1)
+	cout << d.back() << endl;	// 4
+    d.pop_back();		// 2 3
+    d.push_back(4);		// 2 3 4
+
+	// push_front / pop_front - O(1)
+	cout << d.front() << endl;	// 2
+    d.pop_front();		// 3 4
+    d.push_front(2);		// 2 3 4
+
+	return 0;
 }
 {% endhighlight %}
 
