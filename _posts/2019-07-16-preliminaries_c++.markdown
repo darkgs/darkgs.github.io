@@ -96,6 +96,7 @@ int main() {
 ### std::forward_list
 It had been implemented as <b>singly-linked lists</b>.
 Compared to array, vector, and deque, it performs better in inserting.
+It thus has benefits to perform sorting.
 {% highlight c++ %}
 #include <forward_list>
 
@@ -117,6 +118,7 @@ int main() {
     // merge two sorted lists
     fl2.sort(std::less<int>());
     fl.merge(fl2, std::less<int>());    // 1 2 3 4 5 7
+	fl.reverse();		// 7 5 4 3 2 1
 
     // insert an elements
     fl.insert_after(++(++(++(++fl.begin()))), 6);   // can't fl.begin()+4
@@ -124,6 +126,41 @@ int main() {
 
     forward_list<int>::iterator iter;   // forward iterator
     for (iter=fl.begin(); iter!=fl.end(); ++iter) {
+        cout << *iter << " ";
+    }
+    cout << endl;
+    
+    return 0;
+}
+{% endhighlight %}
+
+### std::list
+It stores elements to <b>doubly-linked lists</b>.
+Most of APIs are similar to std::forward_list.
+Compared to std::forward_list, it can insert/erase an element at certain position.
+{% highlight c++ %}
+#include <list>
+
+using namespace std;
+
+int main() {
+    list<int> l = {2, 4, 5};
+
+    // push/pop to the front in O(1)
+    l.push_front(1);   // 1 2 4 5 
+    cout << l.front() << endl;     // 1
+    l.pop_front();     // 2 4 5
+
+    // push/pop to the back in O(1)
+    l.push_back(6);   // 2 4 5 6
+    cout << l.back() << endl;     // 6
+    l.pop_back();     // 2 4 5
+
+    // insert an element
+    l.insert(++l.begin(), 3);
+
+    list<int>::iterator iter;   // bidirectional iterator
+    for (iter=l.begin(); iter!=l.end(); ++iter) {
         cout << *iter << " ";
     }
     cout << endl;
