@@ -14,11 +14,11 @@ The maximum/minimum values of variables often are used to initialized in problem
 {% highlight cpp %}
 #include <limits>
 
-int i_min = std::numeric_limits<int>::min();		// INT_MIN
-int i_max = std::numeric_limits<int>::max();		// INT_MAX
+int i_min = std::numeric_limits<int>::min();        // INT_MIN
+int i_max = std::numeric_limits<int>::max();        // INT_MAX
 
-float f_min = std::numeric_limits<float>::min();	// FLT_MIN
-float f_max = std::numeric_limits<float>::max();	// FLT_MAX
+float f_min = std::numeric_limits<float>::min();    // FLT_MIN
+float f_max = std::numeric_limits<float>::max();    // FLT_MAX
 {% endhighlight %}
 
 ## Sequence Containers
@@ -34,13 +34,13 @@ using namespace std;
 
 int main() {
     int data[] = {0, 1, 2, 4, 5};
-    vector<int> v(data, data + sizeof(data)/sizeof(data[0]));	// initialize from array
-    vector<int> v2(5, 10);		// 10 10 10 10 10
-    vector<int> v3(v2);			// copy v2
-    vector<int> v4(v.begin(), v.begin()+2);		// subset of v, 0 1
+    vector<int> v(data, data + sizeof(data)/sizeof(data[0]));    // initialize from array
+    vector<int> v2(5, 10);        // 10 10 10 10 10
+    vector<int> v3(v2);           // copy v2
+    vector<int> v4(v.begin(), v.begin()+2);    // subset of v, 0 1
 
     // Sequential access - Efficient
-    vector<int>::iterator iter;	// random access iterator
+    vector<int>::iterator iter;   // random access iterator
 
     for (iter = v.begin(); iter != v.end(); ++iter) {
         cout << *iter << " ";
@@ -54,13 +54,13 @@ int main() {
     cout << endl;
 
     // insert / erase - O(n)
-    v.insert(v.begin()+3, 3);			// 0 1 2 3 4 5
-    v.erase(v.begin()+3, v.begin()+4);	// 0 1 2 4 5
+    v.insert(v.begin()+3, 3);           // 0 1 2 3 4 5
+    v.erase(v.begin()+3, v.begin()+4);  // 0 1 2 4 5
 
     // push_back / pop_back - O(1)
-    cout << v.back() << endl;	// 5
-    v.pop_back();				// 0 1 2 4
-    v.push_back(5);				// 0 1 2 4 5
+    cout << v.back() << endl;    // 5
+    v.pop_back();                // 0 1 2 4
+    v.push_back(5);              // 0 1 2 4 5
 
     return 0;
 }
@@ -79,17 +79,17 @@ int main() {
     deque<int> d(data, data + sizeof(data)/sizeof(data[1]));
 
     // Sequential access - Efficient
-    deque<int>::iterator iter;	// random access iterator
+    deque<int>::iterator iter;  // random access iterator
 
     // push_back / pop_back - O(1)
-    cout << d.back() << endl;	// 4
-    d.pop_back();				// 2 3
-    d.push_back(4);				// 2 3 4
+    cout << d.back() << endl;   // 4
+    d.pop_back();               // 2 3
+    d.push_back(4);             // 2 3 4
 
     // push_front / pop_front - O(1)
-    cout << d.front() << endl;	// 2
-    d.pop_front();				// 3 4
-    d.push_front(2);			// 2 3 4
+    cout << d.front() << endl;  // 2
+    d.pop_front();              // 3 4
+    d.push_front(2);            // 2 3 4
 
     return 0;
 }
@@ -110,24 +110,24 @@ int main() {
     forward_list<int> fl2 = {1, 3, 7};
 
     // push/pop to the head in O(1)
-    fl.push_front(1);				// 1 2 5 4
-    cout << fl.front() << endl;     // 1
-    fl.pop_front();					// 2 5 4
+    fl.push_front(1);                 // 1 2 5 4
+    cout << fl.front() << endl;       // 1
+    fl.pop_front();                   // 2 5 4
 
     // q-sort in O(nlog(n))
-    fl.sort(std::greater<int>());	// 5 4 2
-    fl.sort(std::less<int>());		// 2 4 5
+    fl.sort(std::greater<int>());     // 5 4 2
+    fl.sort(std::less<int>());        // 2 4 5
 
     // merge two sorted lists
     fl2.sort(std::less<int>());
-    fl.merge(fl2, std::less<int>());	// 1 2 3 4 5 7
-	fl.reverse();						// 7 5 4 3 2 1
+    fl.merge(fl2, std::less<int>());  // 1 2 3 4 5 7
+    fl.reverse();                     // 7 5 4 3 2 1
 
     // insert an elements
-    fl.insert_after(++(++(++(++fl.begin()))), 6);	// can't fl.begin()+4
-    fl.erase_after(fl.before_begin());				// 2 3 4 5 6 7
+    fl.insert_after(++(++(++(++fl.begin()))), 6);  // can't fl.begin()+4
+    fl.erase_after(fl.before_begin());             // 2 3 4 5 6 7
 
-    forward_list<int>::iterator iter;				// forward iterator
+    forward_list<int>::iterator iter;              // forward iterator
     for (iter=fl.begin(); iter!=fl.end(); ++iter) {
         cout << *iter << " ";
     }
@@ -151,19 +151,19 @@ int main() {
     list<int> l = {2, 4, 5};
 
     // push/pop to the front in O(1)
-    l.push_front(1);			// 1 2 4 5 
-    cout << l.front() << endl;	// 1
-    l.pop_front();				// 2 4 5
+    l.push_front(1);            // 1 2 4 5 
+    cout << l.front() << endl;  // 1
+    l.pop_front();              // 2 4 5
 
     // push/pop to the back in O(1)
-    l.push_back(6);				// 2 4 5 6
-    cout << l.back() << endl;	// 6
-    l.pop_back();				// 2 4 5
+    l.push_back(6);             // 2 4 5 6
+    cout << l.back() << endl;   // 6
+    l.pop_back();               // 2 4 5
 
     // insert an element
     l.insert(++l.begin(), 3);
 
-    list<int>::iterator iter;	// bidirectional iterator
+    list<int>::iterator iter;   // bidirectional iterator
     for (iter=l.begin(); iter!=l.end(); ++iter) {
         cout << *iter << " ";
     }
@@ -209,16 +209,16 @@ int main() {
             << "value : " << iter->second << endl;
     }
 
-    m.erase(2);			// O(log(n) + rebalance)
-    iter = m.find(3);	// O(log(n))
+    m.erase(2);          // O(log(n) + rebalance)
+    iter = m.find(3);    // O(log(n))
     if (iter != m.end()) {
         m.erase(iter);
     }
 
-    m.size();		// the size of container
-    m.count(3);		// the number of entires with key, 0 or 1
-    m.empty();		// is empty?
-    m.clear();		// reset
+    m.size();        // the size of container
+    m.count(3);      // the number of entires with key, 0 or 1
+    m.empty();       // is empty?
+    m.clear();       // reset
 
     return 0;
 }
@@ -238,7 +238,7 @@ using namespace std;
 int main() {
     unordered_map<int, int> m;
 
-    unordered_map<int,int>::iterator iter;	// forward iterator
+    unordered_map<int,int>::iterator iter;    // forward iterator
 
     return 0;
 }
