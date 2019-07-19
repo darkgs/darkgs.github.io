@@ -244,9 +244,8 @@ int main() {
 }
 {% endhighlight %}
 
-[forward_list_api] http://www.cplusplus.com/reference/forward_list/forward_list/
-[list_api] http://www.cplusplus.com/reference/list/list/
-[deque_api] http://www.cplusplus.com/reference/deque/deque/
+[forward_list_api]: http://www.cplusplus.com/reference/forward_list/forward_list/
+[list_api]: http://www.cplusplus.com/reference/list/list/
 [vector_api]: http://www.cplusplus.com/reference/vector/vector/
 [map_api]: http://www.cplusplus.com/reference/map/map/
 [unordered_map_api]: http://www.cplusplus.com/reference/unordered_map/unordered_map/
