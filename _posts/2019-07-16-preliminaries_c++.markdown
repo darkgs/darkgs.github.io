@@ -5,7 +5,7 @@ date:   2019-07-16 20:41:00
 author: Bonhun Koo
 categories: [Coding Interview]
 tags:    coding
-cover:  "/assets/instacode.png"
+cover:  "/assets/instacode.jpeg"
 ---
 
 ## Numeric Limits of Variables
