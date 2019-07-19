@@ -93,6 +93,45 @@ int main() {
 }
 {% endhighlight %}
 
+### std::forward_list
+It had been implemented as <b>singly-linked lists</b>.
+Compared to array, vector, and deque, it performs better in inserting.
+{% highlight c++ %}
+#include <forward_list>
+
+using namespace std;
+
+int main() {
+    forward_list<int> fl = {2, 5, 4};
+    forward_list<int> fl2 = {1, 3, 7};
+
+    // push/pop to the head in O(1)
+    fl.push_front(1);   // 1 2 5 4
+    cout << fl.front() << endl;     // 1
+    fl.pop_front();     // 2 5 4
+
+    // q-sort in O(nlog(n))
+    fl.sort(std::greater<int>());       // 5 4 2
+    fl.sort(std::less<int>());       // 2 4 5
+
+    // merge two sorted lists
+    fl2.sort(std::less<int>());
+    fl.merge(fl2, std::less<int>());    // 1 2 3 4 5 7
+
+    // insert an elements
+    fl.insert_after(++(++(++(++fl.begin()))), 6);   // can't fl.begin()+4
+    fl.erase_after(fl.before_begin());      // 2 3 4 5 6 7
+
+    forward_list<int>::iterator iter;   // forward iterator
+    for (iter=fl.begin(); iter!=fl.end(); ++iter) {
+        cout << *iter << " ";
+    }
+    cout << endl;
+    
+    return 0;
+}
+{% endhighlight %}
+
 ## Associative Containers (Key-Value paired)
 ### std::pair
 std::pair is entry of key-value containers api in the standard library of c++.
