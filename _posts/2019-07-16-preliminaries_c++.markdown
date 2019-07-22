@@ -62,6 +62,10 @@ int main() {
     v.pop_back();                // 0 1 2 4
     v.push_back(5);              // 0 1 2 4 5
 
+	// sort a vector
+	sort(v.begin(), v.end());
+	sort(v.begin(), v.end(), compare);	// bool compare(int i1, int i2) { return i1 < i2; };
+
     return 0;
 }
 {% endhighlight %}
