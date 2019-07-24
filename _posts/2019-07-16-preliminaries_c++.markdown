@@ -179,8 +179,9 @@ int main() {
 
 ### std::stack
 It is designed to serve LIFO (last-in first-out) operations.
-To do this, it ipush and pop an element only at the end of the container.
+To do this, it pushes and pops an element only at the end of the container.
 By default, it uses std::deque as internal data structure.
+Find detalied api of std::stack from [here][stack_api].
 
 {% highlight c++ %}
 #include <stack>
@@ -197,6 +198,33 @@ int main() {
     while (s.size() > 0) {
         cout << s.top() << " ";
         s.pop();                    // return nothing
+    }
+    cout << endl;
+    
+    return 0;
+}
+{% endhighlight %}
+
+### std::queue
+It is designed to serve FIFO (first-in first-out) operations.
+To do this, it pushes an element into the back and pops from the front.
+By default, it uses std::deque as internal data structure.
+Find detalied api of std::queue from [here][queue_api].
+{% highlight c++ %}
+#include <queue>
+
+using namespace std;
+
+int main() {
+    queue<int> q;
+
+    for (int i=0; i<5; ++i) {
+        q.push(i);
+    }
+
+    while (q.size() > 0) {
+        cout << q.front() << " ";
+        q.pop();                    // return nothing
     }
     cout << endl;
     
@@ -275,6 +303,9 @@ int main() {
 }
 {% endhighlight %}
 
+[stack_api]: http://www.cplusplus.com/reference/stack/stack/
+[queue_api]: http://www.cplusplus.com/reference/queue/queue/
+[deque_api]: http://www.cplusplus.com/reference/deque/deque/
 [forward_list_api]: http://www.cplusplus.com/reference/forward_list/forward_list/
 [list_api]: http://www.cplusplus.com/reference/list/list/
 [vector_api]: http://www.cplusplus.com/reference/vector/vector/
