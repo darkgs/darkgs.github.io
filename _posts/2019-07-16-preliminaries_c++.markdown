@@ -177,6 +177,33 @@ int main() {
 }
 {% endhighlight %}
 
+### std::stack
+It is designed to serve LIFO (last-in first-out) operations.
+To do this, it ipush and pop an element only at the end of the container.
+By default, it uses std::deque as internal data structure.
+
+{% highlight c++ %}
+#include <stack>
+
+using namespace std;
+
+int main() {
+    stack<int> s;
+
+    for (int i=0; i<5; ++i) {
+        s.push(i);
+    }
+
+    while (s.size() > 0) {
+        cout << s.top() << " ";
+        s.pop();                    // return nothing
+    }
+    cout << endl;
+    
+    return 0;
+}
+{% endhighlight %}
+
 ## Associative Containers (Key-Value paired)
 ### std::pair
 std::pair is entry of key-value containers api in the standard library of c++.
