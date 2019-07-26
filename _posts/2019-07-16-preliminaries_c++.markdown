@@ -263,7 +263,7 @@ int main() {
 
     s.find(4) != s.end();       // contains
 
-    set<int>::iterator iter;
+    set<int>::iterator iter;	// bidirectional iterator
 
     for (iter=s.begin(); iter!=s.end(); ++iter) {
         cout << *iter << " ";   // 1 3 4 5
@@ -272,6 +272,26 @@ int main() {
 	cout << endl;
 
     
+    return 0;
+}
+{% endhighlight %}
+
+### std::unordered_set
+It stores entires by its key to the <b>hash table</b>.
+So it inserts, deletes, and searches an entry within the time complexity of O(1) in the average and O(n) in the worst case.
+You can find the detailed api of std::map [here][unordered_set_api].
+It keeps the <b>uniqueness</b> of keys by ignoring additional insertions with duplicated keys.
+The usage of std::unordered_set is similar to std::set.
+{% highlight cpp %}
+#include <unordered_set>
+
+using namespace std;
+
+int main() {
+    unordered_set<int> s;
+
+    unordered_set<int>::iterator iter;    // forward iterator
+
     return 0;
 }
 {% endhighlight %}
@@ -356,3 +376,4 @@ int main() {
 [map_api]: http://www.cplusplus.com/reference/map/map/
 [set_api]: http://www.cplusplus.com/reference/set/set/
 [unordered_map_api]: http://www.cplusplus.com/reference/unordered_map/unordered_map/
+[unordered_set_api]: http://www.cplusplus.com/reference/unordered_set/unordered_set/
