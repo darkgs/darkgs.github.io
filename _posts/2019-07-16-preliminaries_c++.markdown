@@ -233,6 +233,49 @@ int main() {
 {% endhighlight %}
 
 ## Associative Containers (Key-Value paired)
+### std::set
+It stores entries by its key to the <b>balancing BST</b> as red-black tree.
+So it inserts, deletes, and searches an entry within the time complexity of O(log(n)) + rebalance.
+It also makes it possible to provide the ordered iteration of entires.
+You can find the detailed api of std::set [here][set_api].
+It keeps the <b>uniqueness</b> of keys by ignoring additional insertions with duplicated keys.
+
+{% highlight cpp %}
+#include <set>
+
+using namespace std;
+
+int main() {
+    set<int> s;
+
+    // Each insertion takes O(log(n)) + rebalance
+    s.insert(4);
+    s.insert(2);
+    s.insert(5);
+    s.insert(1);
+    s.insert(3);
+
+    // Duplicated insertion would be ignored
+    s.insert(3);
+
+    // Each remove takes O(log(n)) + rebalance
+    s.erase(2);
+
+    s.find(4) != s.end();       // contains
+
+    set<int>::iterator iter;
+
+    for (iter=s.begin(); iter!=s.end(); ++iter) {
+        cout << *iter << " ";   // 1 3 4 5
+    }
+
+	cout << endl;
+
+    
+    return 0;
+}
+{% endhighlight %}
+
 ### std::pair
 std::pair is entry of key-value containers api in the standard library of c++.
 {% highlight cpp %}
@@ -244,8 +287,9 @@ std::cout << p.first << ":" << p.second << endl;
 {% endhighlight %}
 
 ### std::map
-It stores key-value pair of entires to the <b>balancing BST</b>.
+It stores key-value pair of entires to the <b>balancing BST</b> as red-black tree.
 So it inserts, deletes, and searches an entry within the time complexity of O(log(n)) + rebalance.
+It also makes it possible to provide the ordered iteration of entires.
 You can find the detailed api of std::map [here][map_api].
 It keeps the <b>uniqueness</b> of keys by ignoring additional insertions with duplicated keys.
 {% highlight cpp %}
@@ -310,4 +354,5 @@ int main() {
 [list_api]: http://www.cplusplus.com/reference/list/list/
 [vector_api]: http://www.cplusplus.com/reference/vector/vector/
 [map_api]: http://www.cplusplus.com/reference/map/map/
+[set_api]: http://www.cplusplus.com/reference/set/set/
 [unordered_map_api]: http://www.cplusplus.com/reference/unordered_map/unordered_map/
