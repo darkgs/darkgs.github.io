@@ -28,3 +28,26 @@ int gray2bin(int gray) {
 	return num;
 }
 {% endhighlight %}
+
+## Rotate a string
+Rotate a string on the in-place memory with the time complexity of O(n)
+Please find the detailed reference code fromt [here][rotate_string].
+{% highlight c++ %}
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void left_rotate(string &s, int d) {
+	reverse(s.begin(), s.begin()+d);
+	reverse(s.begin()+d, s.end());
+	reverse(s.begin(), s.end();
+}
+
+void right_rotate(string &s, int d) {
+	left_rotate(s, s.size()-d);
+}
+
+{% endhighlight %}
+
+[rotate_string]: https://www.geeksforgeeks.org/left-rotation-right-rotation-string-2
+
