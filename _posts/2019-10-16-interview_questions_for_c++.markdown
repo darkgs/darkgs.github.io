@@ -8,7 +8,7 @@ tags:    coding
 cover:  "/assets/instacode.jpeg"
 ---
 
-## Inline functions
+## Inline function
 Inline function is designed to reduce the overheads from function call.
 
 Overheads from function call
@@ -16,6 +16,12 @@ Overheads from function call
 * Store register values related with arguments and return value of calling function.
 * Set register values for arguments and return value of callee function.
 * Control instruction points of callee and calling function.
+
+Disadvantages
+---
+* More executable size
+* More compile time
+* Reduces instruction cache hit rate (compared to Macro)
 
 Please find the detailed description of the inline function from [here][inline_function].
 
