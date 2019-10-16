@@ -22,11 +22,15 @@ Body of function should be small to achieve efficiency.
 * More compile time
 * Reduces instruction cache hit rate (compared to Macro)
 
-#### Comparison with Macro
+#### Compare with Macro
 Macro copies piece of code in the preprocessing phase.
 In the case of inline function, compiler decides whether performing inline or not.
 
 Please find the detailed description of the inline function from [here][inline_function].
+
+#### Can be recurrent?
+Yes, but we may need to limit the degree of recursion for preventing infinit size of executable.
+[stack_overflow][recurrent_inline]
 
 ## Call by Value VS by Reference
 While calling a function,
@@ -38,8 +42,9 @@ Volatile prevents variables from optimizing by compiler.
 It is useful when a variable can be modified by external cause.
 * Memory-mapped I/O (MMIO)
 * Mapped to anther devices
-* Interrupt service routine
+* Interrupt service routine (ISR)
 * Multi-threaded environment
 
 [inline_function]: https://www.geeksforgeeks.org/inline-functions-cpp
+[recurrent_inline]: https://stackoverflow.com/questions/190232/can-a-recursive-function-be-inline
 
