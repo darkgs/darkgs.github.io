@@ -10,18 +10,21 @@ cover:  "/assets/instacode.jpeg"
 
 ## Inline function
 Inline function is designed to reduce the overheads from function call.
+Body of function should be small to achieve efficiency.
 
-Overheads from function call
----
+#### Overheads from function call
 * Store register values related with arguments and return value of calling function.
 * Set register values for arguments and return value of callee function.
 * Control instruction points of callee and calling function.
 
-Disadvantages
----
+#### Disadvantages
 * More executable size
 * More compile time
 * Reduces instruction cache hit rate (compared to Macro)
+
+#### Comparison with Macro
+Macro: code copied in the preprocessing.
+Inline function: compiler decides whether inline or not.
 
 Please find the detailed description of the inline function from [here][inline_function].
 
