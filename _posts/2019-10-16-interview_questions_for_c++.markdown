@@ -33,5 +33,12 @@ While calling a function,
 * Call by Value: copying variables (using copy constructor for object of class)
 * Call by Reference: pass the memory reference
 
+## Volatile
+Volatile prevents variables from optimizing by compiler.
+It is useful when a variable can be modified by external cause.
+* Memory-mapped I/O (MMIO)
+* Interupt service routine
+* Multi-threaded environment
+
 [inline_function]: https://www.geeksforgeeks.org/inline-functions-cpp
 
