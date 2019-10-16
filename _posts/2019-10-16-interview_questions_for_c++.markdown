@@ -30,7 +30,7 @@ Please find the detailed description of the inline function from [here][inline_f
 
 ## Call by Value VS by Reference
 While calling a function,
-* Call by Value: copying variables (using copy constructor in the case of object)
+* Call by Value: copying variables (using copy constructor for object of class)
 * Call by Reference: pass the memory reference
 
 [inline_function]: https://www.geeksforgeeks.org/inline-functions-cpp
