@@ -23,10 +23,15 @@ Body of function should be small to achieve efficiency.
 * Reduces instruction cache hit rate (compared to Macro)
 
 #### Comparison with Macro
-Macro: code copied in the preprocessing.
-Inline function: compiler decides whether inline or not.
+Macro copies piece of code in the preprocessing phase.
+In the case of inline function, compiler decides whether performing inline or not.
 
 Please find the detailed description of the inline function from [here][inline_function].
+
+## Call by Value VS by Reference
+While calling a function,
+* Call by Value: copying variables (using copy constructor in the case of object)
+* Call by Reference: pass the memory reference
 
 [inline_function]: https://www.geeksforgeeks.org/inline-functions-cpp
 
