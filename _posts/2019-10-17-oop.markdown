@@ -28,6 +28,11 @@ The state of a component which is determined by internal datas is only changed b
 This prevents the componenet falling into unexpected state.
 
 ## Inheritance and Polymorphism
+In the perspective of a class, designed features in the class can be shared to the other classes when the features are common.
+Child class can inherit these common features from the parent class.
+
+In the perspective of a object, An object can contain heterogeneous features from the multiple classes.
+Polymorphism means “many shapes” in Greek and it implies this charastrics of an object.
 
 ## References
 You may understand the basic concepts of OOP from [this article][oop_easy].
