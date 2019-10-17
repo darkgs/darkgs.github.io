@@ -10,7 +10,8 @@ cover:  "/assets/instacode.jpeg"
 
 ## Basis of OOP
 Objective Oriented Programming (OOP) is a programming design concept to provide more intuitive structure of codes.
-As you can see in the name itself, object is 
+As you can see in the name itself, the key concept of OOP is the <b>object</b>.
+We can instantiate an object using the <b>class</b> which is so-called the bule print of object.
 
 ## References
 You may understand the basic concepts of OOP from [this article][oop_easy].
