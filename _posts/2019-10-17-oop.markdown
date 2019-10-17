@@ -10,13 +10,24 @@ cover:  "/assets/instacode.jpeg"
 
 ## Basis of OOP
 Objective Oriented Programming (OOP) is a programming design concept to provide more intuitive structure of codes.
-As you can see in the name itself, the key concept of OOP is the <b>object</b>.
+As you can see in the name itself, the key concept of OOP is the <b>object</b> which consists of <b>data</b> and <b>method</b>.
 We can instantiate an object using the <b>class</b> which is so-called the bule print of object.
 OOP desires to construct a poject by interactions between objects performing functions indepent to the other objects.
 In conclusion, OOP helps us to divide a big project to small pieces of sub-problems for making us to achieve more intuitive understanding of the whole project.
 OOP introduces four core principles to make it possible.
 
 ## Abstraction and Encapsulation
+Abstraction is one of the most key insights in the computer science to seperate a big problems into several independent small problems.
+Compared to a big problems, multiple small problems are easy to understand, good to debug, and having more benefits to be optimized.
+A componenet (an object) which solves a piece of problem communicates to the other components using abstracted concept of the others to minimize dependency.
+By the abstraction, we can develop each component independently for implementing, optimizing, and sustaining.
+
+Encapsulation is a concept highly related to the abstraction.
+Internal datas of a component is protected by forbidding direct modification by the other components.
+The state of a component which is determined by internal datas is only changed by public methods of the component.
+This prevents the componenet falling into unexpected state.
+
+## Inheritance and Polymorphism
 
 ## References
 You may understand the basic concepts of OOP from [this article][oop_easy].
