@@ -34,6 +34,11 @@ Child class can inherit these common features from the parent class.
 In the perspective of a object, An object can contain heterogeneous features from the multiple classes.
 Polymorphism means “many shapes” in Greek and it implies this charastrics of an object.
 
+## Re-usabe code
+If we implement well abstracted and encapsulated class, these codes can be re-used by the others by inheritance.
+But, please keep in mind that code reusability is not the main goal of OOP.
+OOP desires to generate intuitive structure of big project by high level interactions between objects.
+
 ## References
 You may understand the basic concepts of OOP from [this article][oop_easy].
 Or, please check [this][oop_detail] to find more detailed descriptions about OOP to get deeper insights.
