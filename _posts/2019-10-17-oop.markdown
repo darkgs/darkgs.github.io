@@ -1,0 +1,21 @@
+---
+layout: post
+title:  "Objective Oriented Programming"
+date:   2019-10-17 13:45:00
+author: Bonhun Koo
+categories: [Coding Interview]
+tags:    coding
+cover:  "/assets/instacode.jpeg"
+---
+
+## Basis of OOP
+Objective Oriented Programming (OOP) is a programming design concept to provide more intuitive structure of codes.
+As you can see in the name itself, object is 
+
+## References
+You may understand the basic concepts of OOP from [this article][oop_easy].
+To get deeper insights, please check [this][oop_detail] to find more detailed descriptions about OOP.
+
+[oop_easy]: https://www.freecodecamp.org/news/object-oriented-programming-concepts-21bb035f7260
+[oop_detail]: https://medium.com/from-the-scratch/oop-everything-you-need-to-know-about-object-oriented-programming-aee3c18e281b
+
