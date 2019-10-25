@@ -361,9 +361,52 @@ using namespace std;
 int main() {
     unordered_map<int, int> m;
 
-    unordered_map<int,int>::iterator iter;    // forward iterator
+	unordered_map<int,int>::iterator iter;    // forward iterator
 
     return 0;
+}
+{% endhighlight %}
+
+## Binary search applications
+C++ STL provides binary-search based libraries for sorted iterable containers.
+Three functions (binary_search, lower_bound, and upper_bound) are implemented with B-search thus the time complexity of them are O(logn).
+
+{% highlight cpp %}
+#include <vector>
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+	vector<int> data = {0, 1, 2, 4, 5};
+
+	// iterable should be sorted for using binary-search based functions.
+	sort(data.begin(), data.end(), less<int>());
+
+	// check whether an element is in a or not.
+	cout << binary_search(data.begin(), data.end(), 3) << endl;		// 0
+	cout << binary_search(data.begin(), data.end(), 4) << endl;		// 1
+
+	// lower_bound
+	// returns the starting iterator which is pointing the element equal or greater then target.
+	// returns a.end() when there is no matching.
+	// If you want to push an element with keeping the iterable being sorted, you can push an element here.
+	cout << *lower_bound(data.begin(), data.end(), 2) << endl;		// 2
+	cout << *lower_bound(data.begin(), data.end(), 3) << endl;		// 4
+	lower_bound(data.begin(), data.end(), 6);						// data.end()
+
+
+	// upper_bound
+	// returns the starting iterator which is pointing the element greater then target.
+	// returns a.end() when there is no matching.
+	cout << *upper_bound(data.begin(), data.end(), 2) << endl;		// 4
+	lower_bound(data.begin(), data.end(), 6);						// data.end()
+
+	// erase the elements in [a, b).
+	data.erase(lower_bound(data.begin(), data.end(), 2),
+			upper_bound(data.begin(), data.end(), 4));				// 0 1 5
+
+	return 0;
 }
 {% endhighlight %}
 
